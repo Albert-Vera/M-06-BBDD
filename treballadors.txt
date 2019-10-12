@@ -1,0 +1,3 @@
+aida,vera,30000,si
+albert,vera,32000,si
+maria,kjdakj,27829,no

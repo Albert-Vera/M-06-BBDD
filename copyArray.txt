@@ -1,0 +1,7 @@
+casa
+mesa
+reloj
+silla
+coche
+lapiz
+color
