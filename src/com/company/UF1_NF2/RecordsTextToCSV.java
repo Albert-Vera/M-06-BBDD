@@ -6,9 +6,8 @@ import java.util.List;
 
 public class RecordsTextToCSV {
 
-    String nom, cognom;
-    int edad;
-    String SEP = ",";
+    private String nom, cognom;
+    private int edad;
 
     public static void main(String[] args) throws IOException {
 
@@ -19,24 +18,24 @@ public class RecordsTextToCSV {
 
     private static void mostraPerPantalla() throws IOException {
 
-        List<RecordsTextToCSV22>agendaList = llegeixFitxer();
+        List<RecordsTextToCSV>agendaList = llegeixFitxer();
         System.out.println();
         System.out.println("     Nombre" + "          Cognom " + "        Edad " );
         System.out.println();
 
-        for(RecordsTextToCSV22 recordsTextToCSV : agendaList){
+        for(RecordsTextToCSV recordsTextToCSV : agendaList){
             System.out.println("    " + recordsTextToCSV.nom + "            " + recordsTextToCSV.cognom + "          " + recordsTextToCSV.edad );
         }
         System.out.println();
     }
 
-    private static List<RecordsTextToCSV22> llegeixFitxer() throws IOException {
+    private static List<RecordsTextToCSV> llegeixFitxer() throws IOException {
 
         File lectura = new File("agenda.txt");
 
         BufferedReader inputStream = new BufferedReader(new FileReader(lectura));
         BufferedReader detectarFinal = new BufferedReader(new FileReader(lectura));
-        List<RecordsTextToCSV22> agenda = new ArrayList<>();
+        List<RecordsTextToCSV> agenda = new ArrayList<>();
         String line, line22;
 
         while ((line22 = detectarFinal.readLine()) != null && !line22.isEmpty()) {
@@ -55,7 +54,7 @@ public class RecordsTextToCSV {
                 }
             }
 
-            RecordsTextToCSV22 recordsTextToCSV = new RecordsTextToCSV22();
+            RecordsTextToCSV recordsTextToCSV = new RecordsTextToCSV();
             recordsTextToCSV.nom = values[0];
             recordsTextToCSV.cognom = values[1];
             recordsTextToCSV.edad = valorInt;
@@ -69,10 +68,10 @@ public class RecordsTextToCSV {
     private static void escriuSortidaCSV() throws IOException {
         File guardaFile = new File("agenda.csv");
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(guardaFile, true));
-        List<RecordsTextToCSV22> agendaLista = llegeixFitxer();
+        List<RecordsTextToCSV> agendaLista = llegeixFitxer();
         outputStream.write("     Nombre" + "          Cognom " + "        Edad \n \n" );
 
-        for(RecordsTextToCSV22 recordsTextToCSV : agendaLista){
+        for(RecordsTextToCSV recordsTextToCSV : agendaLista){
             outputStream.write("    " + recordsTextToCSV.nom + "            " + recordsTextToCSV.cognom + "          " + recordsTextToCSV.edad + "\n");
         }
         outputStream.close();

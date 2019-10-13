@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class NumsToFile1 {
 
-    public static String SEP = ":";
-    public static File guardarFile = new File("Num11001200");
+    private static String SEP = ":";
+    private static File guardarFile = new File("Num11001200");
 
     public static void main(String[] args) throws IOException {
 
