@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class Persona {
 
     private String nom, apellidos, email;
-    private int edad;
+    private String edad;
 
     public String getNom() {
         return nom;
     }
 
-    public void setNom() {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
@@ -20,7 +20,7 @@ public class Persona {
         return apellidos;
     }
 
-    public void setApellidos() {
+    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
@@ -28,22 +28,22 @@ public class Persona {
         return email;
     }
 
-    public void setEmail() {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
     public Persona(){
 
     };
-    public Persona(String nombre, String cognom, String e_mail, int anys) {
+    public Persona(String nombre, String cognom, String e_mail, String  anys) {
         this.nom = nombre;
         this.apellidos = cognom;
         this.email = e_mail;

@@ -10,7 +10,7 @@ public class Treballador extends Persona{
 
         Scanner in = new Scanner(System.in);
 
-        Persona empleado = new Persona();
+        Treballador empleado = new Treballador();
 
         System.out.println("Introduce datos del empleado \n");
         System.out.print(" Nombre:  ");
@@ -18,8 +18,7 @@ public class Treballador extends Persona{
         System.out.print(" Apellidos:  ");
         empleado.setApellidos(in.nextLine());
         System.out.print(" Edad:       ");
-        empleado.setEdad(in.nextInt());
-        in.nextLine();
+        empleado.setEdad(in.nextLine());
         System.out.print(" Email:     ");
         empleado.setEmail(in.nextLine());
 
@@ -27,7 +26,7 @@ public class Treballador extends Persona{
 
     }
 
-    static void escriureDades(Persona empleado) throws IOException {
+    static void escriureDades(Treballador empleado) throws IOException {
 
         BufferedWriter outputStream = new BufferedWriter(new FileWriter("Treballadors.txt", true));
 
@@ -44,7 +43,7 @@ public class Treballador extends Persona{
         while ((line = inputStream.readLine()) != null && !line.isEmpty()) {
             String[] values = line.split(",");
 
-            Persona empleado = new Persona();
+            Treballador empleado = new Treballador();
             empleado.setNom(values[0]);
             empleado.setApellidos(values[1]);
             empleado.setEdad(values[2]);
