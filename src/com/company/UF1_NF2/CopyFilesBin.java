@@ -3,14 +3,14 @@ package com.company.UF1_NF2;
 import java.io.*;
 
 public class CopyFilesBin {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
-        File origen = new File("snake.png");
-        File destino = new File("snakeCopia.png");
+        FileInputStream origen = new FileInputStream("snake.png");
+        FileOutputStream destino = new FileOutputStream("snakeCopia.png");
 
         try {
-            InputStream in = new FileInputStream(origen);
-            OutputStream out = new FileOutputStream(destino);
+            InputStream in = new DataInputStream(origen);
+            OutputStream out = new DataOutputStream(destino);
 
             byte[] buf = new byte[1024];
             int len;

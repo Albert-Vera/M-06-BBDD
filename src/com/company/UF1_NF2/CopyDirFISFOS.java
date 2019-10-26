@@ -20,7 +20,7 @@ public class CopyDirFISFOS {
             InputStream in = new FileInputStream(origen);
             OutputStream out = new FileOutputStream(destino);
 
-            byte[] buf = new byte[1024];
+            byte[] buf = new byte[(int)origen.length()];
             int len;
 
             while ((len = in.read(buf)) > 0) {

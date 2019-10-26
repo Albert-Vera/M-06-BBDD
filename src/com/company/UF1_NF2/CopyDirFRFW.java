@@ -6,18 +6,11 @@ import java.util.Scanner;
 public class CopyDirFRFW {
     public static void main(String[] args) throws IOException {
 
-
-
         File guardaFile = new File("copyDir.txt");
         BufferedWriter outputStream = new BufferedWriter(new FileWriter(guardaFile, true));
-
-
         String line;
-
         File dir = new File("/home/albert/Documents/M-06/datosTxt");
         String[] ficheros = dir.list();
-
-
 
         if (ficheros == null)
             System.out.println("No hay ficheros en el directorio especificado");
