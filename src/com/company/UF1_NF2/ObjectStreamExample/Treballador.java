@@ -32,7 +32,7 @@ public class Treballador extends Persona {
 
         outputStream.close();
     }
-    static void mostraDades() throws IOException, ClassNotFoundException {
+    static void mostraDades() throws IOException{
 
         List<Treballador> personasList = new ArrayList<>();
         File leerFile = new File("Treballadors.txt");

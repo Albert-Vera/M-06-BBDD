@@ -50,7 +50,7 @@ public class Persona {
         this.edad = anys;
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException {
 
         Scanner in = new Scanner(System.in);
         String entrada;
