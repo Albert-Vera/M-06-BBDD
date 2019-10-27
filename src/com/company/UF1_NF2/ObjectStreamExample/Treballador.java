@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class Treballador extends Persona implements java.io.Serializable{
+public class Treballador extends Persona {
     public static void introDades() throws IOException {
 
         Scanner in = new Scanner(System.in);
