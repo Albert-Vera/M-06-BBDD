@@ -13,9 +13,10 @@ public class FileTypes {
             FileOutputStream salidaOut = new FileOutputStream("fileTypes.bin");
             DataOutputStream salidaData = new DataOutputStream(salidaOut);
 
-            //salidaData.writeFloat(decimal);
+            salidaData.writeFloat(decimal);
             salidaData.writeInt(entero);
-            //salidaData.writeChars(string);
+            salidaData.writeChars(string);
+            System.out.println("Escritura en archivo con DataInput Correcta");
 
             salidaData.close();
         } catch (IOException e){
