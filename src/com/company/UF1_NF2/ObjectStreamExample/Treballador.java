@@ -50,8 +50,6 @@ public class Treballador {
             empleado.getApellido();
             empleado.getEdad();
             empleado.getEmail();
-            System.out.println(" escribo archivo:  " + empleado.getNom());
-            System.out.println(" escribo archivo:  " + empleado.getApellido());
 
             objectOutputStream.writeObject(empleado);
             objectOutputStream.close();
@@ -81,13 +79,11 @@ public class Treballador {
 
     static void mostraDades() throws IOException, ClassNotFoundException {
 
-
         ObjectInputStream object = null;
         try {
             File lectura = new File("object.data");
             FileInputStream fis = new FileInputStream(lectura);
             object = new ObjectInputStream(fis);
-
 
             while (true) {
                 Persona treballador = (Persona) object.readObject();
