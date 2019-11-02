@@ -1,6 +1,9 @@
 package com.company.UF1_NF2.ObjectStreamExample;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 public class Treballador {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -80,19 +83,22 @@ public class Treballador {
     static void mostraDades() throws IOException, ClassNotFoundException {
 
         ObjectInputStream object = null;
+        List<Persona> treballadorList ;
         try {
             File lectura = new File("object.data");
             FileInputStream fis = new FileInputStream(lectura);
             object = new ObjectInputStream(fis);
 
-            while (true) {
-                Persona treballador = (Persona) object.readObject();
-                System.out.println("Nombre:    " + treballador.getNom());
-                System.out.println("Apellidos: " + treballador.getApellido());
-                System.out.println("Edad:      " + treballador.getEdad());
-                System.out.println("Email:     " + treballador.getEmail());
-                System.out.println();
+            while (true) {          // LEO Y ALMACENO EN ARRAYlIST Y IMPRIMO
+                treballadorList = Collections.singletonList((Persona) object.readObject());
 
+                for ( Persona lista : treballadorList) {
+                    System.out.println("Nombre:    " + lista.getNom());
+                    System.out.println("Apellidos: " + lista.getApellido());
+                    System.out.println("Edad:      " + lista.getEdad());
+                    System.out.println("Email:     " + lista.getEmail());
+                    System.out.println();
+                }
             }
         }catch (IOException io){
             System.out.println("   Fin de archivo");
