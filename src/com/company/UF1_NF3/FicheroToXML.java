@@ -18,33 +18,38 @@ import org.w3c.dom.*;
 class FicheroToXML {
 
 
-    public static void main(String argv[]) throws IOException {
+    public static void main(String argv[]) throws IOException, ParserConfigurationException, TransformerException {
 
         List<Alumne> alumnes = loadAlumne();
+        Result result = new StreamResult(new java.io.File("ToXMLalumnes" + ".xml")); //nombre del archivo
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        DOMImplementation implementation = builder.getDOMImplementation();
+        Document document = implementation.createDocument(null, "Alumnes", null);
+        document.setXmlVersion("1.0");
 
         for (Alumne alumneList : alumnes) {
             try {
 
-                generate("ToXMLalumnes", alumneList);
+                document = generate(alumneList, document);
             } catch (Exception e) {
             }
         }
+        //Generate XML
+        Source source = new DOMSource(document);
+        //Indicamos donde lo queremos almacenar
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.transform(source, result);
+
     }
 
 
-    public static void generate(String name, Alumne alumneList) throws Exception {
-
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        DOMImplementation implementation = builder.getDOMImplementation();
-        Document document = implementation.createDocument(null, name, null);
-        document.setXmlVersion("1.0");
+    public static Document generate( Alumne alumneList, Document document) throws Exception {
 
         //Main Node
         Element raiz = document.getDocumentElement();
-        //Por cada key creamos un item que contendrá la key y el value
-        //  for(int i=0; i<key.size();i++){
+
         //Item Node
         Element itemNode = document.createElement("ALUMNE");
         //Key Node
@@ -87,14 +92,8 @@ class FicheroToXML {
         //itemNode.appendChild(valueNode);
         //append itemNode to raiz
         raiz.appendChild(itemNode); //pegamos el elemento a la raiz "Documento"
-        //  }
-        //Generate XML
-        Source source = new DOMSource(document);
-        //Indicamos donde lo queremos almacenar
-        Result result = new StreamResult(new java.io.File(name + ".xml")); //nombre del archivo
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.transform(source, result);
 
+        return document;
     }
 
 
