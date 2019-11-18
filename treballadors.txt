@@ -1,4 +1,5 @@
-kola, ldksañ, 423, sdad
-asñdkasñ, dlañldkasñkd, 2342, lsñak
-sladklñ, ksalñdk, 342432, kjdskl
-dkaslñkdñalkd, lakñ, lakñdl, ñalk
+46111222,albert,kkkkk,cognom,423,DAM2
+46113353,jordi,kkkkk,cognom,423,Asix2
+46114442,maria,kkkkk,cognom,423,DAM2
+46115552,clarisa,kkkkk,cognom,423,DAM2
+46116662,nombre,kkkkk,cognom,423,Empresariales

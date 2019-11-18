@@ -1,7 +1,8 @@
 package com.company.UF1_NF2.ObjectStreamExample;
 
+
+
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -134,6 +135,7 @@ class MiObjectOutputStream extends ObjectOutputStream {
     }
 
 }
+
 
 class Persona implements Serializable{
 

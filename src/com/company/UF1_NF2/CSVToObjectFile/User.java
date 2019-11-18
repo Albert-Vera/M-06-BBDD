@@ -1,12 +1,21 @@
 package com.company.UF1_NF2.CSVToObjectFile;
 
-public class User {
-//    public User(String firstname, String lastname, String email, String password) {
-//        this.firstname = firstname;
-//        this.lastname = lastname;
-//        this.email = email;
-//        this.password = password;
-//    }
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+    public User(String firstname, String lastname, String email, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public User(){};
 
     private String firstname, lastname, email, password;
 
