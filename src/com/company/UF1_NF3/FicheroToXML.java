@@ -18,6 +18,8 @@ import org.w3c.dom.*;
 class FicheroToXML {
 
 
+
+
     public static void main(String argv[]) throws IOException, ParserConfigurationException, TransformerException {
 
         List<Alumne> alumnes = loadAlumne();
@@ -41,7 +43,7 @@ class FicheroToXML {
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.transform(source, result);
-
+        System.out.println("\n\n   ......... Generado fichero ToXMLalumnes.xml");
     }
 
 
